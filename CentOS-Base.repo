@@ -1,0 +1,15 @@
+[BaseOS]
+name=CentOS-$releasever - Base
+mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=BaseOS&infra=$infra
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+[OracleBaseOS]
+name=OraclOS
+baseurl=http://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64
+gpgcheck=0
+enabled=1
+
+
+
