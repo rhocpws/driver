@@ -32,8 +32,8 @@ RUN yum install -y \
         kmod && \
     rm -rf /var/cache/yum/*
 
+COPY extract-vmlinux /usr/local/bin/extract-vmlinux
 RUN curl -fsSL -o /usr/local/bin/donkey https://github.com/3XX0/donkey/releases/download/v1.1.0/donkey && \
-    curl -fsSL -o /usr/local/bin/extract-vmlinux https://raw.githubusercontent.com/torvalds/linux/master/scripts/extract-vmlinux && \
     chmod +x /usr/local/bin/donkey /usr/local/bin/extract-vmlinux
 
 #ARG BASE_URL=http://us.download.nvidia.com/XFree86/Linux-x86_64
