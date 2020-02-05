@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8:latest
 COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 COPY RPM-GPG-KEY-centosofficial /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 
-RUN curl -s -L https://nvidia.github.io/nvidia-container-runtime/centos7/nvidia-container-runtime.repo | \
+RUN curl -s -L https://nvidia.github.com/nvidia-container-runtime/centos7/nvidia-container-runtime.repo | \
     tee /etc/yum.repos.d/nvidia-container-runtime.repo
 
 RUN sed -i 's/repo_gpgcheck=1/repo_gpgcheck=0/g' /etc/yum.repos.d/nvidia-container-runtime.repo
