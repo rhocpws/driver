@@ -2,9 +2,9 @@ FROM registry.access.redhat.com/ubi8:latest
 
 COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 COPY RPM-GPG-KEY-centosofficial /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
-
-RUN curl -s -L https://raw.githubusercontent.com/rhocpws/driver/master/nvidia-container-runtime.repo | \
-    tee /etc/yum.repos.d/nvidia-container-runtime.repo
+COPY nvidia-container-runtime.repo /etc/yum.repos.d/nvidia-container-runtime.repo
+#RUN curl -s -L https://raw.githubusercontent.com/rhocpws/driver/master/nvidia-container-runtime.repo | \
+#    tee /etc/yum.repos.d/nvidia-container-runtime.repo
 
 RUN sed -i 's/repo_gpgcheck=1/repo_gpgcheck=0/g' /etc/yum.repos.d/nvidia-container-runtime.repo
 
